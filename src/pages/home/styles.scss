@@ -1,0 +1,89 @@
+.home {
+  min-height: 100vh;
+  position: relative;
+  background: #1f1f1f;
+}
+
+.content {
+  padding: 56px 72px;
+
+  .title {
+    color: #fff;
+    font-size: 6rem;
+    margin-top: 0;
+    margin-bottom: -12px;
+    font-weight: 400;
+  }
+
+  .text {
+    font-family: "Cutive Mono", monospace;
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 300;
+
+    &--sm {
+      font-size: 1.2rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+      color: #ea5f57;
+
+      &:hover {
+        color: #ea5f57;
+        text-decoration: line-through;
+        border-bottom-color: transparent;
+      }
+    }
+  }
+
+  .emoji {
+    font-size: 8rem;
+    margin-top: 0;
+    margin-left: -17px;
+    margin-bottom: 128px;
+  }
+}
+
+.filter {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  pointer-events: none;
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: rgba(0, 0, 0, 0.25);
+    animation: scanline 12s linear infinite;
+  }
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent 50%, rgba(18, 31, 31, 0.25) 50%),
+      linear-gradient(90deg, rgba(255, 31, 31, 0.06), rgba(18, 255, 31, 0.02), rgba(18, 31, 255, 0.06));
+    background-size: 100% 2px, 3px 100%;
+  }
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(600vh);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
