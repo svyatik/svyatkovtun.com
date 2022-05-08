@@ -4,9 +4,8 @@ const Home = () => (
   <div className="home">
     <div className="filter" />
     <div className="content">
-
       <h1 className="title">Svyat Kovtun</h1>
-      <h2 className="text">React.JS Engineer @ <a href="https://crowdbotics.com/" target="_blank" rel="noreferrer">Crowdbotics</a></h2>
+      <h2 className="text">React.JS Engineer <span className="nowrap">@ <a href="https://crowdbotics.com/" target="_blank" rel="noreferrer">Crowdbotics</a></span></h2>
 
       <div className="emoji">🐱‍👤</div>
 

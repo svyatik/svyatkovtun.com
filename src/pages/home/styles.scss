@@ -10,6 +10,7 @@
   .title {
     color: #fff;
     font-size: 6rem;
+    line-height: 6rem;
     margin-top: 0;
     margin-bottom: -12px;
     font-weight: 400;
@@ -44,6 +45,19 @@
     margin-left: -17px;
     margin-bottom: 128px;
   }
+
+  @media (max-width: 768px) {
+    padding: 32px 24px;
+
+    .title {
+      font-size: 4rem;
+      line-height: 4rem;
+    }
+  }
+}
+
+.nowrap {
+  white-space: nowrap;
 }
 
 .filter {
