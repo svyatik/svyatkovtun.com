@@ -1,3 +1,4 @@
+import Ninja from '../../img/ninja.svg'
 import './styles.scss'
 
 const Home = () => (
@@ -7,7 +8,7 @@ const Home = () => (
       <h1 className="title">Svyat Kovtun</h1>
       <h2 className="text">React.JS Engineer <span className="nowrap">@ <a href="https://crowdbotics.com/" target="_blank" rel="noreferrer">Crowdbotics</a></span></h2>
 
-      <div className="emoji">🐱‍👤</div>
+      <img className="emoji" src={Ninja} width="156" alt="🐱‍👤" />
 
       <p className="text text--sm">Reach me: <a href="mailto:svyat.kovtun@gmail.com?subject=Hello!">svyat.kovtun@gmail.com</a></p>
     </div>
