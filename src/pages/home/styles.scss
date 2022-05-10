@@ -95,9 +95,9 @@
 
 @keyframes scanline {
   0% {
-    transform: translateY(600vh);
+    transform: translateY(200vh);
   }
   100% {
-    transform: translateY(0);
+    transform: translateY(-400vh);
   }
 }
