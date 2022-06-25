@@ -1,8 +1,10 @@
+import ThemeTogglerButton from '../../components/ThemeToggler'
+
 import Ninja from '../../img/ninja.svg'
 import './styles.scss'
 
 const Home = () => (
-  <div className="home">
+  <div className="home light">
     <div className="filter" />
     <div className="content">
       <h1 className="title">Svyat Kovtun</h1>
@@ -11,6 +13,8 @@ const Home = () => (
       <img className="emoji" src={Ninja} width="156" alt="🐱‍👤" />
 
       <p className="text text--sm">Reach me: <a href="mailto:svyat.kovtun@gmail.com?subject=Hello!">svyat.kovtun@gmail.com</a></p>
+
+      <ThemeTogglerButton />
     </div>
   </div>
 )
