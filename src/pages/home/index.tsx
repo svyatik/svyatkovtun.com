@@ -4,7 +4,7 @@ import ThemeTogglerButton from '../../components/ThemeToggler'
 import './styles.scss'
 
 const Home = () => (
-  <div className="home light">
+  <div className="home">
     <div className="filter" />
     <div className="content">
       <h1 className="title">Svyat Kovtun</h1>
