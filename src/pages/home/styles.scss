@@ -1,29 +1,50 @@
+:root {
+  --main-bg-color: #fff;
+  --primary: #1f1f1f;
+  --scanline-opacity: 0.065;
+}
+
+[data-theme='dark'] {
+  --main-bg-color: #1f1f1f;
+  --primary: #fff;
+  --scanline-color: #1f1f1f;
+  // --scanline-opacity: 0.25;
+}
+
 .home {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   min-height: 100vh;
   position: relative;
-  background: #1f1f1f;
+  background: var(--main-bg-color);
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 
 .content {
   padding: 56px 72px;
+  color: var(--primary);
 
   .title {
-    color: #fff;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
     font-size: 4.6rem;
-    line-height: 6rem;
-    font-weight: bold;
+    line-height: 4.2rem;
     text-transform: uppercase;
     margin-top: 0;
-    margin-bottom: -24px;
+    margin-bottom: -10px;
+    letter-spacing: 0.01rem;
   }
 
   .text {
     font-family: "Cutive Mono", monospace;
-    color: #fff;
     font-size: 1.8rem;
     font-weight: bold;
     margin-top: 12px;
-    margin-bottom: 42px;
+    margin-bottom: 12px;
 
     &--sm {
       font-size: 1.2rem;
@@ -31,7 +52,6 @@
 
     a {
       text-decoration: none;
-      color: #fff;
       color: #ea5f57;
 
       &:hover {
@@ -43,6 +63,7 @@
   }
 
   .emoji {
+    margin-top: 24px;
     margin-bottom: 128px;
   }
 
@@ -51,7 +72,7 @@
 
     .title {
       font-size: 4rem;
-      line-height: 4rem;
+      line-height: 3.6rem;
     }
   }
 }
@@ -67,6 +88,7 @@
   left: 0;
   position: fixed;
   pointer-events: none;
+  z-index: 1;
 
   &::before,
   &::after {
@@ -79,8 +101,10 @@
     content: "";
     width: 100%;
     height: 2px;
-    background: rgba(0, 0, 0, 0.25);
-    animation: scanline 12s linear infinite;
+    background: var(--scanline-color);
+    // background: #1f1f1f;
+    // opacity: var(--scanline-opacity);
+    animation: scanline 8s linear infinite;
   }
 
   &::after {
@@ -93,11 +117,55 @@
   }
 }
 
+.header {
+  display: flex;
+  align-items: center;
+  padding-top: 32px;
+  padding-right: 32px;
+
+  @media (max-width: 768px) {
+    justify-content: flex-end;
+    padding: 0;
+    width: 100%;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding: 0 0 0 24px;
+    box-sizing: border-box;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+
+    @media (max-width: 768px) {
+      &::after {
+        content: "GitHub"; 
+      }
+
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: initial;
+      text-decoration: none;
+      color: #ea5f57;
+
+      &:hover {
+        color: #ea5f57;
+        text-decoration: line-through;
+        border-bottom-color: transparent;
+      }
+    }
+  }
+}
+
 @keyframes scanline {
   0% {
-    transform: translateY(600vh);
+    transform: translateY(150vh);
   }
   100% {
-    transform: translateY(0);
+    transform: translateY(-300vh);
   }
 }
